@@ -1,0 +1,31 @@
+class Tree {
+    ArrayList<Integer> postOrder(Node root) {
+        // code here
+        ArrayList<Integer> ans=new ArrayList<Integer>();
+        Stack<Node> s=new Stack<>();
+        
+        Stack<Integer> t=new Stack<>();
+        s.push(root);
+        
+        while(!s.isEmpty()){
+            Node temp=s.pop();
+            t.push(temp.data);
+            if(temp.left!=null){
+                s.push(temp.left);
+            }
+            if(temp.right!=null){
+                s.push(temp.right);
+            }
+        }
+        
+        while(!t.isEmpty()){
+            ans.add(t.pop());
+        }
+        
+        
+        return ans;
+        
+        
+        
+    }
+}
