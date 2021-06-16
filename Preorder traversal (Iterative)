@@ -1,0 +1,28 @@
+class Tree
+{
+    // Return a list containing the inorder traversal of the given tree
+    ArrayList<Integer> preOrder(Node root)
+    {
+        // Code
+        
+        ArrayList<Integer> ans=new ArrayList<Integer>();
+        Stack<Node> s=new Stack<>();
+        s.push(root);
+        
+        while(!s.isEmpty()){
+            Node temp=s.pop();
+            ans.add(temp.data);
+            if(temp.right!=null){
+                s.push(temp.right);
+            }
+            if(temp.left!=null){
+                s.push(temp.left);
+            }
+        }
+        
+        
+        return ans;
+    }
+    
+    
+}
